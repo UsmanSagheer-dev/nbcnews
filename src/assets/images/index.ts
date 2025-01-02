@@ -3,11 +3,19 @@ import Profilelogo from './profile.png'
 import Arrow from './arrow.png'
 import SearchIcon from './searchicon.png'
 import Modelicon from './modelicon.png'
+import Newsimg from './newsimage.png'
+import Likdeicon from './likeicon.png'
+import Exporticon from './exporticon.png'
+import FavouriteIcon from './favouriteicon.png'
 export {
 Newslogo,
 Profilelogo,
 Arrow,
 SearchIcon,
-Modelicon
+Modelicon,
+Newsimg,
+Exporticon,
+FavouriteIcon,
+Likdeicon
 
 }
