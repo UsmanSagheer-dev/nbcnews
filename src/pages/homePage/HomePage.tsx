@@ -1,3 +1,4 @@
+import CardSection from "../../components/cardSection/CardSection";
 import ErrorAlert from "../../components/errorAlert/ErrorAlert";
 import Header from "../../components/header/Header";
 import HeroSection from "../../components/heroSection/HeroSection";
@@ -24,6 +25,9 @@ function Home() {
       {/* Tabs Section */}
       <div className="mt-0 lg:mt-[40px] max-w-[1920px] w-full flex justify-center items-center">
         <Tabs />
+      </div>
+      <div className="max-w-[1920px] w-full flex justify-center items-center">
+        <CardSection/>
       </div>
     </div>
   );

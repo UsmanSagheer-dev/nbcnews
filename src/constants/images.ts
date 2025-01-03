@@ -9,6 +9,7 @@ import Exporticon from "../assets/images/exporticon.png";
 import FavouriteIcon from "../assets/images/favouriteicon.png";
 import ScreenTabs from "../assets/images/screentab.png";
 import Logonews from "../assets/images/logonews.png";
+import Cardimg from "../assets/images/cardimg.png";
 export const IMAGES = {
   NEWS_LOGO: Newslogo,
   PROFILE_LOGO: Profilelogo,
@@ -21,5 +22,6 @@ export const IMAGES = {
   FAVOURITE_ICON: FavouriteIcon,
   SCREEN_TABS: ScreenTabs,
   LOGO_NEWS: Logonews,
+  CARD_IMAGE: Cardimg,
 
 };
