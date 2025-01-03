@@ -9,7 +9,7 @@ const CoronavirusCard = () => {
           Trending
         </p>
         <div>
-          <CardHeaderIcon />
+          <CardHeaderIcon showCount={false} />
         </div>
       </div>
 
