@@ -4,14 +4,14 @@ import CoronavirusCard from "../coronavirusCard/CoronavirusCard";
 const HeroSection = () => {
   return (
     <div
-      className="flex flex-wrap items-center justify-center lg:space-x-[86px] space-y-6 lg:space-y-0 w-full"
-      style={{ top: "32px" }}
+      className="flex flex-wrap items-center justify-between  space-y-6 lg:space-y-0 w-full"
+     
     >
       <div className="relative">
         <img
           src={Newsimg}
           alt="newsimg"
-          className="w-full max-w-[700px] h-auto lg:w-[700px] lg:h-[500px] object-cover"
+          className="w-full max-w-[750px] max-h-[500px] h-auto lg:w-[700px] lg:h-[500px] object-cover"
         />
 
         <div

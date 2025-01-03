@@ -1,4 +1,3 @@
-import React from 'react';
 import CardHeaderIcon from "../cardHeaderIcon/CardHeaderIcon";
 import InfoBar from "../infoBar/InfoBar";
 
@@ -15,8 +14,10 @@ const CoronavirusCard = () => {
       </div>
 
       <div className="mt-4">
-        <h2 className="text-[20px] md:text-[24px] lg:text-[30px] font-semibold text-[#2A2A2A] leading-snug"
-          style={{ fontFamily: "IBMPlexSerif-Regular" }}>
+        <h2
+          className="text-[20px] md:text-[24px] lg:text-[30px] font-semibold text-[#2A2A2A] leading-snug"
+          style={{ fontFamily: "IBMPlexSerif-Regular" }}
+        >
           Cake meme reflects coronavirus <br /> absurdity in a world where{" "}
           <br /> nothing is what it seems
         </h2>
