@@ -10,6 +10,11 @@ import FavouriteIcon from "../assets/images/favouriteicon.png";
 import ScreenTabs from "../assets/images/screentab.png";
 import Logonews from "../assets/images/logonews.png";
 import Cardimg from "../assets/images/cardimg.png";
+import FooterLogo from "../assets/images/footerlogo.png";
+import Wifilogo from "../assets/images/wifilogo.png";
+import Facebooklogo from "../assets/images/facebooklogo.png";
+import Twitterlogo from "../assets/images/twitterlogo.png";
+import Yango from '../assets/images/yango.png';
 export const IMAGES = {
   NEWS_LOGO: Newslogo,
   PROFILE_LOGO: Profilelogo,
@@ -23,5 +28,11 @@ export const IMAGES = {
   SCREEN_TABS: ScreenTabs,
   LOGO_NEWS: Logonews,
   CARD_IMAGE: Cardimg,
+  FOOTER_LOGO: FooterLogo,
+  WIFI_LOGO: Wifilogo,
+  FACEBOOK_LOGO: Facebooklogo,
+  TWITTER_LOGO: Twitterlogo,
+  YANGO: Yango,
+ 
 
 };

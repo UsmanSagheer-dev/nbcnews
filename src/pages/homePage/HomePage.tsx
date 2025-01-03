@@ -1,5 +1,6 @@
 import CardSection from "../../components/cardSection/CardSection";
 import ErrorAlert from "../../components/errorAlert/ErrorAlert";
+import Footer from "../../components/footer/Footer";
 import Header from "../../components/header/Header";
 import HeroSection from "../../components/heroSection/HeroSection";
 import Tabs from "../../components/tabs/Tabs";
@@ -28,6 +29,9 @@ function Home() {
       </div>
       <div className="max-w-[1920px] w-full flex justify-center items-center">
         <CardSection/>
+      </div>
+      <div className="w-full h-full max-w-[1920px]    bg-[#0E1E32] flex  items-center">
+        <Footer/>
       </div>
     </div>
   );

@@ -1,8 +1,7 @@
 import React from "react";
-import Card from "../card/Card"; // Import the Card component
+import Card from "../card/Card"; 
 import { IMAGES } from "../../constants/images";
 
-// Data array for cards
 const cardData = [
   {
     cardimg: IMAGES.CARD_IMAGE,
