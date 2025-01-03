@@ -3,7 +3,7 @@ import InfoBar from "../infoBar/InfoBar";
 
 const CoronavirusCard = () => {
   return (
-    <div className="hidden xl:block w-full max-w-[90%] lg:max-w-[600px]">
+    <div className=" xl:block max-w-[540px] h-[320px] w-full">
       <div className="flex justify-between items-center">
         <p className="font-semibold text-[#C31815] text-sm lg:text-base">
           Trending
