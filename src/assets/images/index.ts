@@ -7,6 +7,7 @@ import Newsimg from './newsimage.png'
 import Likdeicon from './likeicon.png'
 import Exporticon from './exporticon.png'
 import FavouriteIcon from './favouriteicon.png'
+import ScreenTabs from './screentab.png'
 export {
 Newslogo,
 Profilelogo,
@@ -16,6 +17,6 @@ Modelicon,
 Newsimg,
 Exporticon,
 FavouriteIcon,
-Likdeicon
+Likdeicon,ScreenTabs
 
 }

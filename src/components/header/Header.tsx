@@ -15,8 +15,8 @@ const Header = () => {
   };
 
   return (
-    <header style={{ backgroundColor: "#FFFFFFD9" }}>
-      <div className="container mx-auto px-[30px] lg:px-[150px] py-2 hidden items-center justify-between md:flex">
+    <header >
+      <div className="container py-2 hidden items-center justify-between md:flex">
         <div className="flex items-center space-x-2">
           <img src={Newslogo} alt="Logo" className="w-[62px] h-[52px]" />
         </div>
