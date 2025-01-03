@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ScreenTabs } from "../../assets/images/index";
+import { IMAGES } from "../../constants/images";
 
 const Tabs = () => {
   const [activeTab, setActiveTab] = useState("Latest Stories");
@@ -7,10 +7,10 @@ const Tabs = () => {
   const tabs = ["Latest Stories", "Opinion", "Health"];
 
   return (
-    <div className="flex justify-center items-center w-full">
-      <div className="flex justify-between items-center border-b border-gray-300 bg-white px-4 py-2 w-full sm:w-[80.5%] rounded-[5px]">
+    <div className="flex justify-center items-center max-w-[1300px] w-full">
+      <div className="flex flex-col sm:flex-row justify-between items-center bg-[#FFFFFFD9] px-4 py-2 w-full">
         {/* Tabs Section */}
-        <div className="flex flex-row space-x-6 items-center">
+        <div className="flex flex-wrap sm:flex-nowrap justify-center sm:justify-start space-x-6 items-center w-full sm:w-auto">
           {tabs.map((tab) => (
             <div
               key={tab}
@@ -28,7 +28,11 @@ const Tabs = () => {
 
         {/* Icons Section */}
         <div className="hidden sm:flex space-x-4">
-          <img src={ScreenTabs} alt="Screen Tabs" className="w-[27px] h-[24px]" />
+          <img
+            src={IMAGES.SCREEN_TABS}
+            alt="Screen Tabs"
+            className="w-[27px] h-[24px]"
+          />
         </div>
       </div>
     </div>

@@ -1,156 +1,125 @@
 import { useState } from "react";
-import {
-  Arrow,
-  Modelicon,
-  Newslogo,
-  Profilelogo,
-  SearchIcon,
-} from "../../assets/images/index";
+import NavbarTabs from "../navbarTabs/NavbarTabs"; // Import Tab component
+import Icons from "../icons/Icons"; // Import Icon component
+import { IMAGES } from "../../constants/images";
 
 const Header = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [activeTab, setActiveTab] = useState<number | null>(null);
 
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
   };
 
+  const navLinks = [
+    "Corona Updates",
+    "Politics",
+    "Business",
+    "Sports",
+    "World",
+    "Travel",
+    "Products",
+  ];
+
+  const icons = [
+    {
+      src: IMAGES.PROFILE_LOGO,
+      alt: "Profile Icon",
+      width: "w-[19.2px]",
+      height: "h-[24px]",
+    },
+    {
+      src: IMAGES.SEARCH_ICON,
+      alt: "Search Icon",
+      width: "w-[24px]",
+      height: "h-[24px]",
+    },
+    {
+      src: IMAGES.MODEL_ICON,
+      alt: "Model Icon",
+      width: "w-[23px]",
+      height: "h-[22px]",
+    },
+  ];
+
+  const handleTabClick = (index: number) => {
+    setActiveTab(index);
+  };
+
   return (
-    <header >
-      <div className="container py-2 hidden items-center justify-between md:flex">
+    <header className="sticky  shadow-md z-50">
+      {/* Desktop Navigation */}
+      <div className="hidden md:flex items-center justify-between w-full max-w-[1366px] mx-auto max:h-[80px] h-auto px-7 py-5 ">
         <div className="flex items-center space-x-2">
-          <img src={Newslogo} alt="Logo" className="w-[62px] h-[52px]" />
+          <img src={IMAGES.LOGO_NEWS} alt="Logo" className="w-[62px] h-[52px]" />
         </div>
 
-        <nav className="flex flex-nowrap md:flex-wrap space-x-12 w-full justify-center items-center">
-          <a
-            href="#"
-            className="text-gray-700 hover:text-blue-500 text-base font-semibold"
-          >
-            Corona Updates
-          </a>
-          <a
-            href="#"
-            className="text-gray-700 hover:text-blue-500 text-base font-semibold"
-          >
-            Politics
-          </a>
-          <a
-            href="#"
-            className="text-gray-700 hover:text-blue-500 text-base font-semibold"
-          >
-            Business
-          </a>
-          <a
-            href="#"
-            className="text-gray-700 hover:text-blue-500 text-base font-semibold"
-          >
-            Sports
-          </a>
-          <a
-            href="#"
-            className="text-gray-700 hover:text-blue-500 text-base font-semibold"
-          >
-            World
-          </a>
-          <a
-            href="#"
-            className="text-gray-700 hover:text-blue-500 text-base font-semibold"
-          >
-            Travel
-          </a>
+        <nav className="flex flex-wrap justify-center items-center space-x-4 sm:space-x-8 lg:space-x-14">
+          {navLinks.map((link, index) => (
+            <NavbarTabs
+              key={index}
+              label={link}
+              isActive={activeTab === index}
+              onClick={() => handleTabClick(index)}
+            />
+          ))}
           <a>
             <div className="flex items-center space-x-5 justify-center">
-              <span className="text-gray-700 text-base font-semibold">
-                Products
-              </span>
-              <img className="w-[12px] h-[12px]" src={Arrow} alt="Arrow" />
+              <img className="w-[12px] h-[12px]" src={IMAGES.ARROW} alt="Arrow" />
             </div>
           </a>
         </nav>
 
-        <div className="flex items-center space-x-[20px]">
-          <img
-            src={Profilelogo}
-            alt="Profile Icon"
-            className="w-[19.2px] h-[24px]"
-          />
-          <img
-            src={SearchIcon}
-            alt="Search Icon"
-            className="w-[24px] h-[24px]"
-          />
-          <img src={Modelicon} alt="Model Icon" className="w-[23px] h-[22px]" />
+        <div className="flex items-center space-x-[20px] cursor-pointer">
+          {icons.map((icon, index) => (
+            <Icons
+              key={index}
+              src={icon.src}
+              alt={icon.alt}
+              width={icon.width}
+              height={icon.height}
+              onClick={index === 2 ? toggleModal : undefined}
+            />
+          ))}
         </div>
       </div>
 
-      <div className="md:hidden flex items-center justify-between px-4 py-2">
-        <img src={Newslogo} alt="Logo" className="w-[40px] h-[40px]" />
+      {/* Mobile Navigation */}
+      <div className="md:hidden flex items-center justify-between px-4 py-2 bg-white shadow-md">
+        <img src={IMAGES.LOGO_NEWS} alt="Logo" className="w-[40px] h-[40px]" />
         <div className="flex items-center space-x-[15px]">
-          <img
-            src={Profilelogo}
-            alt="Profile Icon"
-            className="w-[19.2px] h-[24px]"
-          />
-          <img
-            src={SearchIcon}
-            alt="Search Icon"
-            className="w-[24px] h-[24px]"
-          />
-          <img
-            src={Modelicon}
-            alt="Model Icon"
-            className="w-[23px] h-[22px]"
-            onClick={toggleModal}
-          />
+          {icons.map((icon, index) => (
+            <Icons
+              key={index}
+              src={icon.src}
+              alt={icon.alt}
+              width={icon.width}
+              height={icon.height}
+              onClick={index === 2 ? toggleModal : undefined}
+            />
+          ))}
         </div>
       </div>
 
+      {/* Modal for Mobile */}
       {isModalOpen && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50"
+          className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-start z-50"
           onClick={toggleModal}
         >
           <div
-            className="bg-white w-[90%] max-w-md p-4 rounded-lg shadow-lg"
+            className="bg-white w-full max-w-md p-4 rounded-lg shadow-lg mt-10 animate-slide-down"
             onClick={(e) => e.stopPropagation()}
           >
             <nav className="flex flex-col space-y-4">
-              <a
-                href="#"
-                className="text-gray-700 hover:text-blue-500 text-base font-semibold"
-              >
-                Corona Updates
-              </a>
-              <a
-                href="#"
-                className="text-gray-700 hover:text-blue-500 text-base font-semibold"
-              >
-                Politics
-              </a>
-              <a
-                href="#"
-                className="text-gray-700 hover:text-blue-500 text-base font-semibold"
-              >
-                Business
-              </a>
-              <a
-                href="#"
-                className="text-gray-700 hover:text-blue-500 text-base font-semibold"
-              >
-                Sports
-              </a>
-              <a
-                href="#"
-                className="text-gray-700 hover:text-blue-500 text-base font-semibold"
-              >
-                World
-              </a>
-              <a
-                href="#"
-                className="text-gray-700 hover:text-blue-500 text-base font-semibold"
-              >
-                Travel
-              </a>
+              {navLinks.map((link, index) => (
+                <NavbarTabs
+                  key={index}
+                  label={link}
+                  isActive={activeTab === index}
+                  onClick={() => handleTabClick(index)}
+                />
+              ))}
             </nav>
           </div>
         </div>
