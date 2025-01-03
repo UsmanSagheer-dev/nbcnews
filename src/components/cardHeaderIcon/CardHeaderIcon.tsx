@@ -1,11 +1,11 @@
-import { Exporticon, FavouriteIcon, Likdeicon } from "../../assets/images/index";
+import { IMAGES } from "../../constants/images";
 
 function CardHeaderIcon() {
   // Images ka array
   const images = [
-    Likdeicon,
-    Exporticon,
-    FavouriteIcon,
+    IMAGES.LIKE_ICON,
+    IMAGES.EXPORT_ICON,
+    IMAGES.FAVOURITE_ICON,
   ];
 
   return (
