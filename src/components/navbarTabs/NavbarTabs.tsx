@@ -1,13 +1,15 @@
-// TabComponent.tsx
 import React from "react";
-
 interface TabComponentProps {
   label: string;
   isActive: boolean;
   onClick: () => any;
 }
 
-const NavbarTabs: React.FC<TabComponentProps> = ({ label, isActive, onClick }) => {
+const NavbarTabs: React.FC<TabComponentProps> = ({
+  label,
+  isActive,
+  onClick,
+}) => {
   return (
     <div
       onClick={onClick}

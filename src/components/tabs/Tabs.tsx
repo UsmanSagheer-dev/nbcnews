@@ -9,7 +9,6 @@ const Tabs = () => {
   return (
     <div className="flex justify-center items-center max-w-[1300px] w-full">
       <div className="flex flex-col sm:flex-row justify-between items-center bg-[#FFFFFFD9] px-4 py-2 w-full">
-        {/* Tabs Section */}
         <div className="flex flex-wrap sm:flex-nowrap justify-center sm:justify-start space-x-6 items-center w-full sm:w-auto">
           {tabs.map((tab) => (
             <div

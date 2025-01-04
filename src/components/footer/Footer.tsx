@@ -10,7 +10,6 @@ function Footer() {
 
   const tabs = ["About", "Contact", "Careers", "Coupons"];
 
-  // Array of image data with sizes
   const socialIcons = [
     { src: IMAGES.WIFI_LOGO, alt: "Wifi Logo", width: "28px", height: "28px" },
     {
@@ -30,7 +29,6 @@ function Footer() {
 
   return (
     <div className="w-full max-w-[1133px] mx-auto flex flex-wrap flex-col sm:flex-row justify-between items-center gap-8 py-8 px-4 sm:px-0">
-      {/* Logo and copyright section */}
       <div className="flex flex-col justify-between items-center gap-4 sm:gap-[41px] text-center sm:text-left">
         <div>
           <img src={IMAGES.FOOTER_LOGO} alt="Footer Logo" />
@@ -40,7 +38,6 @@ function Footer() {
         </div>
       </div>
 
-      {/* Text section */}
       <div className="mt-6 sm:mt-0 text-center sm:text-left">
         {text.map((paragraph, index) => (
           <p key={index} className="text-[#FFFFFF] mb-4">

@@ -96,8 +96,8 @@ const cardData = [
 ];
 
 const CardSection: React.FC = () => {
-  const [visibleCards, setVisibleCards] = useState(6); // Initially 3 cards
-  const [isAllCardsVisible, setIsAllCardsVisible] = useState(false); // Track if all cards are visible
+  const [visibleCards, setVisibleCards] = useState(6); 
+  const [isAllCardsVisible, setIsAllCardsVisible] = useState(false); 
 
   const handleViewMore = () => {
     if (visibleCards + 3 >= cardData.length) {

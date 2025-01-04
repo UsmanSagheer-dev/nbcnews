@@ -1,6 +1,6 @@
 import { useState } from "react";
-import NavbarTabs from "../navbarTabs/NavbarTabs"; // Import Tab component
-import Icons from "../icons/Icons"; // Import Icon component
+import NavbarTabs from "../navbarTabs/NavbarTabs";
+import Icons from "../icons/Icons"; 
 import { IMAGES } from "../../constants/images";
 
 const Header = () => {

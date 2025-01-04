@@ -11,12 +11,8 @@ const HeroSection = () => {
           className="max-w-[750px] max:h-[500px] w-full h-full"
         />
 
-        <div
-          className="absolute bottom-0 left-0 w-full bg-gradient-to-b from-transparent to-black"
-        >
-          <h2
-            className="block sm:hidden text-[20px] font-semibold text-white leading-snug p-4 left-8 font-ibm-plex"
-          >
+        <div className="absolute bottom-0 left-0 w-full bg-gradient-to-b from-transparent to-black">
+          <h2 className="block sm:hidden text-[20px] font-semibold text-white leading-snug p-4 left-8 font-ibm-plex">
             Cake meme reflects coronavirus <br /> absurdity in a world where{" "}
             <br /> nothing is what it seems
           </h2>

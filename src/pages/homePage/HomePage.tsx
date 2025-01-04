@@ -30,13 +30,13 @@ function Home() {
         <Tabs />
       </div>
       <div className="max-w-[1920px] w-full flex justify-center items-center">
-        <CardSection/>
+        <CardSection />
       </div>
       <div className="max-w-[1920px] w-full flex justify-center items-center ">
-      <Carousel/>
+        <Carousel />
       </div>
       <div className="w-full h-full max-w-[1920px] sm:mt-8  bg-[#0E1E32] flex  items-center">
-        <Footer/>
+        <Footer />
       </div>
     </div>
   );
