@@ -17,6 +17,7 @@ module.exports = {
       },
       fontFamily: {
         'ibm-plex': ['IBMPlexSerif-Regular', 'serif'], // Add custom font here
+        'NunitoSans': ['NunitoSans_7pt_SemiCondensed-Regular', 'sans-serif'], // Add custom font here
       },
     },
   },
