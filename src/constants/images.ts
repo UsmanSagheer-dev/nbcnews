@@ -17,6 +17,7 @@ import Twitterlogo from "../assets/images/twitterlogo.png";
 import Yango from '../assets/images/yango.png';
 import Caroselimg1 from '../assets/images/Caroselimg1.png';
 import Caroselimg2 from '../assets/images/Caroselimg2.png';
+import CrossIcon from '../assets/images/crossicon.png';
 export const IMAGES = {
   NEWS_LOGO: Newslogo,
   PROFILE_LOGO: Profilelogo,
@@ -36,6 +37,7 @@ export const IMAGES = {
   TWITTER_LOGO: Twitterlogo,
   YANGO: Yango,
   CAROSEL_IMG1: Caroselimg1,
-  CAROSEL_IMG2: Caroselimg2
+  CAROSEL_IMG2: Caroselimg2,
+  CROSS_ICON: CrossIcon,
 
 };

@@ -1,11 +1,19 @@
-function InfoBar() {
+function InfoBar({
+  author,
+  time,
+  readTime,
+}: {
+  author: string;
+  time: string;
+  readTime: string;
+}) {
   return (
     <div className="flex items-center text-gray-500 text-sm space-x-5 mt-3">
-      <span>2 hours ago</span>
+      <span>{time}</span>
       <div className="flex space-x-2">
-        <span>By Lucy Hiddleston</span>
+        <span>By {author}</span>
         <span className="text-gray-300">|</span>
-        <span>4 min read</span>
+        <span>{readTime}</span>
       </div>
     </div>
   );

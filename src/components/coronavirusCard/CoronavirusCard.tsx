@@ -2,8 +2,12 @@ import CardHeaderIcon from "../cardHeaderIcon/CardHeaderIcon";
 import InfoBar from "../infoBar/InfoBar";
 
 const CoronavirusCard = () => {
+  const author = "John Doe";
+  const time = "2 hours ago";
+  const readTime = "5 min read";
+
   return (
-    <div className=" max-w-[540px] max:h-[320px] w-full h-full">
+    <div className="max-w-[540px] max-h-[320px] w-full h-full">
       <div className="flex justify-between items-center">
         <p className="font-semibold text-[#C31815] text-sm lg:text-base">
           Trending
@@ -33,7 +37,7 @@ const CoronavirusCard = () => {
       </div>
 
       <div className="mt-4">
-        <InfoBar />
+        <InfoBar author={author} time={time} readTime={readTime} />
       </div>
     </div>
   );
