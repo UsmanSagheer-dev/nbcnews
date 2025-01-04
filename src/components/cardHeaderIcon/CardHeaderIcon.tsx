@@ -1,18 +1,17 @@
 import React, { useState } from "react";
-import { FaRegHeart } from "react-icons/fa"; // Importing icons
+import { FaRegHeart } from "react-icons/fa";
 import { PiExportBold } from "react-icons/pi";
 import { CiBookmark } from "react-icons/ci";
 
-// Define the interface for props
 interface CardHeaderIconProps {
-  showCount: boolean; // Prop to control if count is shown or not
+  showCount: boolean;
 }
 
 interface IconData {
-  icon: JSX.Element; // Using React Icons component directly
-  count: number; // Like count
-  showCount: boolean; // Whether to display count or not
-  isActive: boolean; // Whether the icon is active (changes color)
+  icon: JSX.Element;
+  count: number;
+  showCount: boolean;
+  isActive: boolean;
 }
 
 export const ICONS = {
@@ -22,22 +21,20 @@ export const ICONS = {
 };
 
 const CardHeaderIcon: React.FC<CardHeaderIconProps> = ({ showCount }) => {
-  // Initial icon data with isActive property
   const [icons, setIcons] = useState<IconData[]>([
     { icon: ICONS.Like_icon, count: 28, showCount, isActive: false },
     { icon: ICONS.Export_icon, count: 0, showCount, isActive: false },
     { icon: ICONS.Favourite_icon, count: 72, showCount, isActive: false },
   ]);
 
-  // Handle click event to toggle color and update count
   const handleIconClick = (index: number) => {
     setIcons((prevIcons) =>
       prevIcons.map((icon, i) =>
         i === index
           ? {
               ...icon,
-              isActive: !icon.isActive, // Toggle active state
-              count: icon.count + (icon.showCount && !icon.isActive ? 1 : 0), // Increment count only if showCount is true and not active
+              isActive: !icon.isActive,
+              count: icon.count + (icon.showCount && !icon.isActive ? 1 : 0),
             }
           : icon
       )
@@ -49,7 +46,7 @@ const CardHeaderIcon: React.FC<CardHeaderIconProps> = ({ showCount }) => {
       {icons.map((icon, index) => (
         <div
           key={index}
-          className="flex items-center cursor-pointer"
+          className="flex items-center cursor-pointer gap-2"
           onClick={() => handleIconClick(index)}
         >
           <div
@@ -59,9 +56,9 @@ const CardHeaderIcon: React.FC<CardHeaderIconProps> = ({ showCount }) => {
           >
             {icon.icon}
           </div>
-          {icon.showCount && ( // Only show count if showCount is true
+          {icon.showCount && (
             <span
-              className={`ml-2 text-sm font-medium ${
+              className={`text-sm mb-3 font-medium ${
                 icon.isActive ? "text-red-500" : "text-gray-700"
               }`}
             >
