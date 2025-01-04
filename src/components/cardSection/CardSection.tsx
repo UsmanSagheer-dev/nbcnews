@@ -1,117 +1,110 @@
 import React, { useState } from "react";
-import Card from "../card/Card"; 
+import Card from "../card/Card";
 import { IMAGES } from "../../constants/images";
 
 const cardData = [
   {
     cardimg: IMAGES.CARD_IMAGE,
-    title: "John Lewis to make final journey across Edmund Pettus Bridge in procession",
+    title:
+      "John Lewis to make final journey across Edmund Pettus Bridge in procession",
     description:
       "The body of the late US Rep. John Lewis on Sunday will make the final journey across the famous bridge in Selma, Alabama, where he helped lead a march for voting rights in 1965.",
+    author: "John Lewis",
+    time: "12:45 PM",
+    readTime: "5 min read",
   },
   {
     cardimg: IMAGES.CARD_IMAGE,
     title: "Another inspiring story",
     description:
       "A brief description of another inspiring story that captures attention and delivers value.",
+    author: "Jane Doe",
+    time: "1:30 PM",
+    readTime: "3 min read",
   },
   {
     cardimg: IMAGES.CARD_IMAGE,
     title: "Breaking news update",
     description:
       "A quick update on the latest breaking news, keeping you informed and up to date.",
+    author: "Mark Smith",
+    time: "2:00 PM",
+    readTime: "2 min read",
   },
   {
     cardimg: IMAGES.CARD_IMAGE,
-    title: "John Lewis to make final journey across Edmund Pettus Bridge in procession",
+    title:
+      "John Lewis to make final journey across Edmund Pettus Bridge in procession",
     description:
       "The body of the late US Rep. John Lewis on Sunday will make the final journey across the famous bridge in Selma, Alabama, where he helped lead a march for voting rights in 1965.",
+    author: "John Lewis",
+    time: "12:45 PM",
+    readTime: "5 min read",
   },
   {
     cardimg: IMAGES.CARD_IMAGE,
     title: "Another inspiring story",
     description:
       "A brief description of another inspiring story that captures attention and delivers value.",
+    author: "Jane Doe",
+    time: "1:30 PM",
+    readTime: "3 min read",
   },
   {
     cardimg: IMAGES.CARD_IMAGE,
     title: "Breaking news update",
     description:
       "A quick update on the latest breaking news, keeping you informed and up to date.",
+    author: "Mark Smith",
+    time: "2:00 PM",
+    readTime: "2 min read",
   },
   {
     cardimg: IMAGES.CARD_IMAGE,
-    title: "John Lewis to make final journey across Edmund Pettus Bridge in procession",
+    title:
+      "John Lewis to make final journey across Edmund Pettus Bridge in procession",
     description:
       "The body of the late US Rep. John Lewis on Sunday will make the final journey across the famous bridge in Selma, Alabama, where he helped lead a march for voting rights in 1965.",
+    author: "John Lewis",
+    time: "12:45 PM",
+    readTime: "5 min read",
   },
   {
     cardimg: IMAGES.CARD_IMAGE,
     title: "Another inspiring story",
     description:
       "A brief description of another inspiring story that captures attention and delivers value.",
+    author: "Jane Doe",
+    time: "1:30 PM",
+    readTime: "3 min read",
   },
   {
     cardimg: IMAGES.CARD_IMAGE,
     title: "Breaking news update",
     description:
       "A quick update on the latest breaking news, keeping you informed and up to date.",
-  },
-  {
-    cardimg: IMAGES.CARD_IMAGE,
-    title: "John Lewis to make final journey across Edmund Pettus Bridge in procession",
-    description:
-      "The body of the late US Rep. John Lewis on Sunday will make the final journey across the famous bridge in Selma, Alabama, where he helped lead a march for voting rights in 1965.",
-  },
-  {
-    cardimg: IMAGES.CARD_IMAGE,
-    title: "Another inspiring story",
-    description:
-      "A brief description of another inspiring story that captures attention and delivers value.",
-  },
-  {
-    cardimg: IMAGES.CARD_IMAGE,
-    title: "Breaking news update",
-    description:
-      "A quick update on the latest breaking news, keeping you informed and up to date.",
-  },
-  {
-    cardimg: IMAGES.CARD_IMAGE,
-    title: "John Lewis to make final journey across Edmund Pettus Bridge in procession",
-    description:
-      "The body of the late US Rep. John Lewis on Sunday will make the final journey across the famous bridge in Selma, Alabama, where he helped lead a march for voting rights in 1965.",
-  },
-  {
-    cardimg: IMAGES.CARD_IMAGE,
-    title: "Another inspiring story",
-    description:
-      "A brief description of another inspiring story that captures attention and delivers value.",
-  },
-  {
-    cardimg: IMAGES.CARD_IMAGE,
-    title: "Breaking news update",
-    description:
-      "A quick update on the latest breaking news, keeping you informed and up to date.",
+    author: "Mark Smith",
+    time: "2:00 PM",
+    readTime: "2 min read",
   },
 ];
 
 const CardSection: React.FC = () => {
-  const [visibleCards, setVisibleCards] = useState(6); 
-  const [isAllCardsVisible, setIsAllCardsVisible] = useState(false); 
+  const [visibleCards, setVisibleCards] = useState(6);
+  const [isAllCardsVisible, setIsAllCardsVisible] = useState(false);
 
   const handleViewMore = () => {
     if (visibleCards + 3 >= cardData.length) {
-     
       setIsAllCardsVisible(true);
-      setVisibleCards(cardData.length); 
+      setVisibleCards(cardData.length);
     } else {
       setVisibleCards(visibleCards + 6);
     }
   };
 
   const handleShowLess = () => {
-    setVisibleCards(6); 
-    setIsAllCardsVisible(false); 
+    setVisibleCards(6);
+    setIsAllCardsVisible(false);
   };
 
   return (
@@ -123,6 +116,9 @@ const CardSection: React.FC = () => {
             cardimg={card.cardimg}
             title={card.title}
             description={card.description}
+            author={card.author}
+            time={card.time}
+            readTime={card.readTime}
             showLikeCount={true}
           />
         ))}
@@ -133,7 +129,7 @@ const CardSection: React.FC = () => {
         {!isAllCardsVisible ? (
           <button
             onClick={handleViewMore}
-           className="bg-[transparent] text-[#C31815] px-6 py-2 border-[#C31815] border-[2px] transition-all duration-200"
+            className="bg-[transparent] text-[#C31815] px-6 py-2 border-[#C31815] border-[2px] transition-all duration-200"
           >
             View More
           </button>
@@ -149,6 +145,5 @@ const CardSection: React.FC = () => {
     </div>
   );
 };
-
 
 export default CardSection;
