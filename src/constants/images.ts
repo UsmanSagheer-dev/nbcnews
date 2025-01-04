@@ -15,6 +15,8 @@ import Wifilogo from "../assets/images/wifilogo.png";
 import Facebooklogo from "../assets/images/facebooklogo.png";
 import Twitterlogo from "../assets/images/twitterlogo.png";
 import Yango from '../assets/images/yango.png';
+import Caroselimg1 from '../assets/images/Caroselimg1.png';
+import Caroselimg2 from '../assets/images/Caroselimg2.png';
 export const IMAGES = {
   NEWS_LOGO: Newslogo,
   PROFILE_LOGO: Profilelogo,
@@ -33,6 +35,7 @@ export const IMAGES = {
   FACEBOOK_LOGO: Facebooklogo,
   TWITTER_LOGO: Twitterlogo,
   YANGO: Yango,
- 
+  CAROSEL_IMG1: Caroselimg1,
+  CAROSEL_IMG2: Caroselimg2
 
 };
