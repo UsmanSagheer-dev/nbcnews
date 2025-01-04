@@ -2,9 +2,8 @@ import React from "react";
 interface TabComponentProps {
   label: string;
   isActive: boolean;
-  onClick: () => any;
+  onClick: () => void;
 }
-
 const NavbarTabs: React.FC<TabComponentProps> = ({
   label,
   isActive,
