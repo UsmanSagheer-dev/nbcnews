@@ -3,7 +3,7 @@ import CoronavirusCard from "../coronavirusCard/CoronavirusCard";
 
 const HeroSection = () => {
   return (
-    <div className="flex flex-wrap justify-center gap-[100px] max-w-[1366px] items-center w-full bg-[#f1f2f3]">
+    <div className="flex flex-wrap justify-center gap-[100px] max-w-[1366px] items-center w-full ">
       <div className="relative">
         <img
           src={IMAGES.NEWS_LOGO}

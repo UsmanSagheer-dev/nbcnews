@@ -1,12 +1,16 @@
-import "./App.css";
-import Home from "./pages/homePage/HomePage";
-
+import { BrowserRouter as Router } from 'react-router-dom';
+import Header from './components/header/Header';
+import Navigation from './navigation/Navigation';
 function App() {
   return (
-  
-      <div className="flex flex-col items-center justify-center max-w-[1920px] w-full bg-[#f1f2f3] ">
-        <Home/>
+    <Router>
+      <div className="flex flex-col min-h-screen">
+        <Header />
+        <main className="flex-grow">
+          <Navigation />
+        </main>
       </div>
+    </Router>
   );
 }
 

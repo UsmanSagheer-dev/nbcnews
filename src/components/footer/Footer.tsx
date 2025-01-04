@@ -7,9 +7,7 @@ function Footer() {
     "Terms of Service",
     "nbcnews.com Site Map",
   ];
-
   const tabs = ["About", "Contact", "Careers", "Coupons"];
-
   const socialIcons = [
     { src: IMAGES.WIFI_LOGO, alt: "Wifi Logo", width: "28px", height: "28px" },
     {
@@ -28,7 +26,7 @@ function Footer() {
   ];
 
   return (
-    <div className="w-full max-w-[1133px] mx-auto flex flex-wrap flex-col sm:flex-row justify-between items-center gap-8 py-8 px-4 sm:px-0">
+    <div className="w-full max-w-[1133px]  mx-auto flex flex-wrap flex-col sm:flex-row justify-between items-center gap-8 py-8 px-4 sm:px-0">
       <div className="flex flex-col justify-between items-center gap-4 sm:gap-[41px] text-center sm:text-left">
         <div>
           <img src={IMAGES.FOOTER_LOGO} alt="Footer Logo" />
@@ -45,9 +43,7 @@ function Footer() {
           </p>
         ))}
       </div>
-
-      {/* Tabs and social icons */}
-      <div className="flex flex-col items-center gap-8">
+      <div className="flex flex-col items-center justify-center gap-8">
         <ul className="flex flex-wrap justify-center sm:justify-start space-x-6 sm:space-x-[51px] text-[#FFFFFF]">
           {tabs.map((tab, index) => (
             <li key={index} className="cursor-pointer hover:underline">
@@ -55,7 +51,7 @@ function Footer() {
             </li>
           ))}
         </ul>
-        <div className="flex justify-center items-center gap-6 sm:gap-[51px]">
+        <div className="flex justify-center items-center gap-6 sm:gap-[51px] ">
           {socialIcons.map((icon, index) => (
             <img
               key={index}
