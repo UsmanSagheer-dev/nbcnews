@@ -19,9 +19,9 @@ function Home() {
       <div className="mt-0 lg:mt-[40px] max-w-[1920px] w-full flex justify-center items-center">
         <Tabs />
       </div>
-      <div className="max-w-[1920px] w-full flex justify-center items-center">
+      {/* <div className="max-w-[1920px] w-full flex justify-center items-center">
         <CardSection />
-      </div>
+      </div> */}
       <div className="max-w-[1920px] w-full">
         <Carousel />
       </div>
