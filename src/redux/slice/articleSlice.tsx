@@ -22,7 +22,6 @@ export interface ArticleState {
   data: Article[] | null;
   isLoading: boolean;
   isError: string | null;
-  searchQuery: string;
 }
 
 // Initial state
@@ -30,21 +29,15 @@ const initialState: ArticleState = {
   data: null,
   isLoading: false,
   isError: null,
-  searchQuery: "",
 };
 
 // Thunk to fetch articles
 export const fetchArticles = createAsyncThunk(
   "article/fetchArticles",
-  async (searchQuery: string, { rejectWithValue }) => {
+  async (_, { rejectWithValue }) => {
     try {
       const response: AxiosResponse<{ results: Article[] }> = await Instance.get(
-        "/svc/mostpopular/v2/emailed/30.json",
-        // {
-        //   params: {
-        //     query: searchQuery, // Ensure searchQuery is passed
-        //   },
-        // }
+        "/svc/mostpopular/v2/emailed/30.json"
       );
       return response.data.results;
     } catch (error: any) {
@@ -53,16 +46,11 @@ export const fetchArticles = createAsyncThunk(
   }
 );
 
-
 // Article slice
 export const articleSlice = createSlice({
   name: "article",
   initialState,
-  reducers: {
-    setSearchQuery: (state, action) => {
-      state.searchQuery = action.payload;
-    },
-  },
+  reducers: {},
   extraReducers: (builder) => {
     builder
       .addCase(fetchArticles.pending, (state) => {
@@ -80,5 +68,4 @@ export const articleSlice = createSlice({
   },
 });
 
-export const { setSearchQuery } = articleSlice.actions;
 export default articleSlice.reducer;

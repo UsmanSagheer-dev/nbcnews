@@ -1,4 +1,4 @@
-import CardSection from "../../components/cardSection/CardSection";
+// import CardSection from "../../components/cardSection/CardSection";
 import Carousel from "../../components/customNavigationCarousal/CustomNavigationCarousal";
 import ErrorAlert from "../../components/errorAlert/ErrorAlert";
 import Footer from "../../components/footer/Footer";

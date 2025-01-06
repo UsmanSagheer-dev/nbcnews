@@ -15,7 +15,7 @@ const CardSection: React.FC = () => {
   const [showAll, setShowAll] = useState(false); 
 
   useEffect(() => {
-    dispatch(fetchArticles(""));
+    dispatch(fetchArticles());
   }, [dispatch]);
 
   
