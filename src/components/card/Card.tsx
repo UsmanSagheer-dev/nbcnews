@@ -2,14 +2,13 @@ import React, { useState } from "react";
 import InfoBar from "../infoBar/InfoBar";
 import CardHeaderIcon from "../cardHeaderIcon/CardHeaderIcon";
 import ArticleModal from "../modal/ArticleModal";
-
 interface CardProps {
   cardimg: string;
   title: string;
   description: string;
-  author: string; // Added author prop
-  time: string; // Added time prop
-  readTime: string; // Added readTime prop
+  author: string; 
+  time: string; 
+  readTime: string;
   showLikeCount?: boolean;
 }
 
@@ -17,9 +16,9 @@ const Card: React.FC<CardProps> = ({
   cardimg,
   title,
   description,
-  author, // Added author prop to Card component
-  time, // Added time prop
-  readTime, // Added readTime prop
+  author, 
+  time, 
+  readTime, 
   showLikeCount = true,
 }) => {
   const [showModal, setShowModal] = useState(false);
@@ -77,7 +76,7 @@ const Card: React.FC<CardProps> = ({
       <ArticleModal
         showModal={showModal}
         setShowModal={setShowModal}
-        modalData={modalData} // Pass modalData here
+        modalData={modalData} 
       />
     </>
   );
