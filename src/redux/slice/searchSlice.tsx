@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import {  AxiosResponse } from "axios";
+import { AxiosResponse } from "axios";
 import Instance from "../../utility/Instance";
 
 export interface SearchState {
@@ -7,13 +7,11 @@ export interface SearchState {
   isLoading: boolean;
   isError: string | null;
 }
-
 const initialState: SearchState = {
   searchResults: null,
   isLoading: false,
-  isError: ""
+  isError: "",
 };
-
 export interface SearchResponse {
   _id: string;
   multimedia: { url: string }[];
@@ -23,7 +21,6 @@ export interface SearchResponse {
   byline: { original: string };
   error: string;
 }
-
 export const fetchSearchResults = createAsyncThunk<SearchResponse[], string>(
   "search/fetchSearchResults",
   async (searchQuery: string) => {
@@ -35,13 +32,22 @@ export const fetchSearchResults = createAsyncThunk<SearchResponse[], string>(
           q: searchQuery,
         },
       });
-      return responseData.data.response.docs;
+      const docs = responseData.data.response.docs.map((doc) => {
+        return {
+          ...doc,
+          multimedia: doc.multimedia.map((media) => ({
+            url: media.url.startsWith("http")
+              ? media.url
+              : `https://www.nytimes.com/${media.url}`,
+          })),
+        };
+      });
+      return docs;
     } catch (error: any) {
       throw new Error(error?.message || "Something went wrong");
+    }
   }
-}
 );
-
 export const searchSlice = createSlice({
   name: "search",
   initialState,
@@ -62,5 +68,4 @@ export const searchSlice = createSlice({
       });
   },
 });
-
 export default searchSlice.reducer;
