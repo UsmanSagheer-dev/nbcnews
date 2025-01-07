@@ -36,7 +36,7 @@ const Header = () => {
       alt: "Search Icon",
       width: "w-[24px]",
       height: "h-[24px]",
-      path: "/search",
+      path: "/corona",
     },
     {
       src: IMAGES.MODEL_ICON,

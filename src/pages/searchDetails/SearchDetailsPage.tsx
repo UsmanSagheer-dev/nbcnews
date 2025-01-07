@@ -16,38 +16,39 @@ function SearchDetailsPage() {
   console.log("Search Results: ", searchResults);
 
   return (
-    <div className="bg-[#f1f2f3]">
-      <div className="container mx-auto flex items-center justify-center bg-[#f1f2f3]">
-        <div className="flex flex-col items-center justify-center mt-[253px] lg:gap-[64px] gap-5">
-          <div>
-            <NewsHeader />
-          </div>
-          <div className="w-full overflow-hidden">
-            <SearchInput />
-          </div>
-        </div>
+   <div className="bg-[#f1f2f3]">
+  <div className="container mx-auto flex items-center justify-center bg-[#f1f2f3]">
+    <div className="flex flex-col items-center justify-center mt-[253px] lg:gap-[64px] gap-5">
+      <div>
+        <NewsHeader />
       </div>
-
-      <div className="flex items-center justify-center mt-[263px]">
-        <div className="container bg-white lg:w-[1290px] w-full h-[54px] flex items-center justify-start px-[15px]">
-          <h1 className="text-[18px] font-semibold">Search Results</h1>
-        </div>
+      <div className="w-full overflow-hidden">
+        <SearchInput />
       </div>
+    </div>
+  </div>
 
-      <div className="container mx-auto flex items-center justify-center flex-wrap gap-4 mt-5">
-        {isLoading ? (
-          <div>
-            <Loader />
-          </div>
-        ) : isError ? (
-          <p className="text-red-500">{isError}</p>
-        ) : searchResults && searchResults.length > 0 ? (
-          searchResults.map((result) => {
-            const imageUrl = result.multimedia[0]?.url || "default-image.jpg";
-            console.log("Image URL: ", imageUrl);
-            return (
+  <div className="flex items-center justify-center mt-[263px]">
+    <div className="container bg-white lg:w-[1290px] w-full h-[54px] flex items-center justify-start px-[15px]">
+      <h1 className="text-[18px] font-semibold">Search Results</h1>
+    </div>
+  </div>
+
+  <div className="container w-full mx-auto lg:w-[1300px] mt-5">
+    {isLoading ? (
+      <div className="flex justify-center">
+        <Loader />
+      </div>
+    ) : isError ? (
+      <p className="text-red-500">{isError}</p>
+    ) : searchResults && searchResults.length > 0 ? (
+      <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        {searchResults.map((result) => {
+          const imageUrl = result.multimedia[0]?.url || "default-image.jpg";
+          console.log("Image URL: ", imageUrl);
+          return (
+            <div className="bg-slate-500" key={result._id}>
               <Card
-                key={result._id}
                 cardimg={imageUrl}
                 title={result.headline.main}
                 description={result.abstract}
@@ -55,17 +56,20 @@ function SearchDetailsPage() {
                 time={new Date(result.pub_date).toLocaleDateString()}
                 readTime="5 min read"
               />
-            );
-          })
-        ) : (
-          <p>No results found.</p>
-        )}
+            </div>
+          );
+        })}
       </div>
+    ) : (
+      <p>No results found.</p>
+    )}
+  </div>
 
-      <div className="bg-[#0E1E32]">
-        <Footer />
-      </div>
-    </div>
+  <div className="bg-[#0E1E32]">
+    <Footer />
+  </div>
+</div>
+
   );
 }
 

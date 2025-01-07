@@ -2,7 +2,6 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { AxiosResponse } from "axios";
 import Instance from "../../utility/Instance";
 
-// Article data interface
 export interface Article {
   id: number;
   byline: string;
@@ -17,21 +16,18 @@ export interface Article {
   }[];
 }
 
-// Article state interface
 export interface ArticleState {
   data: Article[] | null;
   isLoading: boolean;
   isError: string | null;
 }
 
-// Initial state
 const initialState: ArticleState = {
   data: null,
   isLoading: false,
   isError: null,
 };
 
-// Thunk to fetch articles
 export const fetchArticles = createAsyncThunk(
   "article/fetchArticles",
   async (_, { rejectWithValue }) => {
@@ -46,7 +42,6 @@ export const fetchArticles = createAsyncThunk(
   }
 );
 
-// Article slice
 export const articleSlice = createSlice({
   name: "article",
   initialState,

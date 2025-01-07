@@ -24,7 +24,7 @@ module.exports = {
         },
       },
       fontFamily: {
-        "ibm-plex": ["IBMPlexSerif-Regular", "serif"],
+        "ibm-plex": ["IBMPlexSerif-Regular"],
         NunitoSans: ["NunitoSans_7pt_SemiCondensed-Regular", "sans-serif"],
         Poppins: ["Poppins-Regular", "sans-serif"],
       },
