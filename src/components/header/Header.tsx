@@ -22,7 +22,6 @@ const Header = () => {
     { label: "Travel", path: "/travel" },
     { label: "Products", path: "/products" },
   ];
-
   const icons = [
     {
       src: IMAGES.PROFILE_LOGO,
@@ -76,7 +75,6 @@ const Header = () => {
             <img className="w-[12px] h-[12px]" src={IMAGES.ARROW} alt="Arrow" />
           </div>
         </nav>
-
         <div className="flex items-center space-x-[20px] cursor-pointer">
           {icons.map((icon, index) =>
             icon.path ? (
@@ -166,5 +164,4 @@ const Header = () => {
     </header>
   );
 };
-
 export default Header;

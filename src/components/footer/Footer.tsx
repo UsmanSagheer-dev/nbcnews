@@ -1,5 +1,4 @@
 import { IMAGES } from "../../constants/images";
-
 function Footer() {
   const text = [
     "Privacy Policy",
@@ -24,7 +23,6 @@ function Footer() {
       height: "27px",
     },
   ];
-
   return (
     <div className="w-full max-w-[1133px]  mx-auto flex flex-wrap flex-col sm:flex-row justify-between items-center gap-8 py-8 px-4 sm:px-0">
       <div className="flex flex-col justify-between items-center gap-4 sm:gap-[41px] text-center sm:text-left">
@@ -35,7 +33,6 @@ function Footer() {
           <p className="text-[#FFFFFF]">copyright 2020 | NBC NEWS</p>
         </div>
       </div>
-
       <div className="mt-6 sm:mt-0 text-center sm:text-left">
         {text.map((paragraph, index) => (
           <p key={index} className="text-[#FFFFFF] mb-4">

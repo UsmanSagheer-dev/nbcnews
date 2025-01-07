@@ -1,13 +1,9 @@
 import { useState } from "react";
 import { IMAGES } from "../../constants/images";
-
 import CardSection from "../cardSection/CardSection";
-
 const Tabs = () => {
   const [activeTab, setActiveTab] = useState("Latest Stories");
-
   const tabs = ["Latest Stories", "Opinion", "Health"];
-
   return (
     <div className=" max-w-[1366px] w-full">
       <div className="flex flex-col sm:flex-row justify-between items-center bg-[#FFFFFFD9] lg:px-9  py-2 w-full">
@@ -36,10 +32,8 @@ const Tabs = () => {
           />
         </div>
       </div>
-
-
-      {activeTab === "Latest Stories" && <CardSection/>}
-      {activeTab === "Opinion" && <CardSection/>}
+      {activeTab === "Latest Stories" && <CardSection />}
+      {activeTab === "Opinion" && <CardSection />}
     </div>
   );
 };

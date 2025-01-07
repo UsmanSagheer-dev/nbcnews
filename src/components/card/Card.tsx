@@ -6,19 +6,18 @@ interface CardProps {
   cardimg: string;
   title: string;
   description: string;
-  author: string; 
-  time: string; 
+  author: string;
+  time: string;
   readTime: string;
   showLikeCount?: boolean;
 }
-
 const Card: React.FC<CardProps> = ({
   cardimg,
   title,
   description,
-  author, 
-  time, 
-  readTime, 
+  author,
+  time,
+  readTime,
   showLikeCount = true,
 }) => {
   const [showModal, setShowModal] = useState(false);
@@ -46,11 +45,15 @@ const Card: React.FC<CardProps> = ({
   return (
     <>
       <div
-        className="w-full mx-auto bg-white border border-gray-200 rounded-lg-[3px] shadow-md h-full   flex flex-col justify-between"
+        className="w-full mx-auto bg-white border border-gray-200 rounded-lg-[3px] shadow-md h-full   flex flex-col justify-between rounded-[5px] "
         onClick={handleCardClick}
       >
         {/* Card Image */}
-        <img className=" lg:w-[438px] w-full h-48 object-cover" src={cardimg} alt={title} />
+        <img
+          className=" lg:w-[438px] w-full h-48 object-cover rounded-[5px]"
+          src={cardimg}
+          alt={title}
+        />
 
         {/* Card Content */}
         <div className="p-4">
@@ -71,12 +74,10 @@ const Card: React.FC<CardProps> = ({
           </div>
         </div>
       </div>
-
-      {/* Modal */}
       <ArticleModal
         showModal={showModal}
         setShowModal={setShowModal}
-        modalData={modalData} 
+        modalData={modalData}
       />
     </>
   );
