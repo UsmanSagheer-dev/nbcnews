@@ -39,7 +39,7 @@ const Tabs = () => {
 
 
       {activeTab === "Latest Stories" && <CardSection/>}
-      {activeTab === "Opinion" && <div>Opinion Tab Content</div>}
+      {activeTab === "Opinion" && <CardSection/>}
     </div>
   );
 };

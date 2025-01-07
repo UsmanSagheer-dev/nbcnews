@@ -46,11 +46,11 @@ const Card: React.FC<CardProps> = ({
   return (
     <>
       <div
-        className="w-auto mx-auto bg-white border border-gray-200 rounded-lg-[3px] shadow-md   flex flex-col justify-between"
+        className="w-full mx-auto bg-white border border-gray-200 rounded-lg-[3px] shadow-md h-full   flex flex-col justify-between"
         onClick={handleCardClick}
       >
         {/* Card Image */}
-        <img className=" w-[438px] h-48" src={cardimg} alt={title} />
+        <img className=" lg:w-[438px] w-full h-48 object-cover" src={cardimg} alt={title} />
 
         {/* Card Content */}
         <div className="p-4">

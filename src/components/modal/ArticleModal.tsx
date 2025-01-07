@@ -1,6 +1,5 @@
 import React from "react";
 import CardHeaderIcon from "../cardHeaderIcon/CardHeaderIcon";
-
 interface ModalProps {
   showModal: boolean;
   setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
@@ -13,7 +12,6 @@ interface ModalProps {
     readTime: string;
   };
 }
-
 const ArticleModal: React.FC<ModalProps> = ({
   showModal,
   setShowModal,
@@ -35,49 +33,55 @@ const ArticleModal: React.FC<ModalProps> = ({
 
           {/* Modal Container */}
           <div
-            className="fixed inset-0 flex lg:flex-row sm:flex-col justify-center items-center z-50 px-4"
+            className="fixed inset-0 z-50 flex items-center justify-center"
             onClick={handleCloseModal}
           >
+            {/* Modal Content */}
             <div
-              className="w-full lg:max-w-[1000px] flex-wrap bg-white rounded-lg overflow-hidden shadow-lg flex lg:flex-row sm:flex-col items-center justify-center relative"
+              className="relative w-full max-w-[95%] sm:max-w-[85%] lg:max-w-[1000px] bg-white rounded-lg shadow-xl overflow-hidden transform transition-all"
               onClick={(e) => e.stopPropagation()}
             >
-              {/* Close Icon */}
-              <button
-                className="absolute top-4 sm:top-1 right-4 text-gray-700 hover:text-black text-[25px] "
-                onClick={handleCloseModal}
-              >
-                ✕
-              </button>
-
-              {/* Left Section: Circular Image */}
-              <div className="lg:w-1/2 sm:w-full flex items-center justify-center lg:p-6 p-4">
-                <div className="w-full lg:max-h-[500px] h-full overflow-hidden mt-8 lg:mt-0">
-                  <img
-                    src={modalData.cardimg}
-                    alt={modalData.title}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
+ 
+              <div className="absolute -right-1 -top-1 z-50">
+                <button
+                  className="bg-white w-8 h-8 rounded-full flex items-center justify-center shadow-md hover:bg-gray-100"
+                  onClick={handleCloseModal}
+                >
+                  <span className="text-gray-600 text-xl">×</span>
+                </button>
               </div>
 
-              {/* Right Section: Title and Description */}
-              <div className="lg:w-1/2 sm:w-full sm:p-4 lg:p-6 p-4">
-                <div className="flex justify-between items-center text-[#C31815]">
-                  <h1>Trending</h1>
-                  <CardHeaderIcon showCount={false} />
+              <div className="flex flex-col lg:flex-row w-full">
+                <div className="w-full lg:w-1/2 mt-6 lg:mt-0">
+                  <div className="relative h-[200px] sm:h-[300px] lg:h-[400px] p-4 overflow-hidden">
+                    <img
+                      src={modalData.cardimg}
+                      alt={modalData.title}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
                 </div>
-                <h1 className="text-2xl font-semibold mb-4">
-                  {modalData.title}
-                </h1>
-                <p className="text-gray-600 mb-6">{modalData.description}</p>
 
-                {/* Footer Info */}
-                <div className="flex justify-between text-sm text-gray-500">
-                  <p>{modalData.time}</p>
-                  <p>
-                    By {modalData.author} | {modalData.readTime}
+                <div className="w-full lg:w-1/2 p-4 sm:p-6">
+                  <div className="flex justify-between items-center text-[#C31815]">
+                    <h1>Trending</h1>
+                    <CardHeaderIcon showCount={false} />
+                  </div>
+
+                  <h1 className="text-xl sm:text-2xl font-semibold my-4 font-ibm-plex">
+                    {modalData.title}
+                  </h1>
+
+                  <p className="text-gray-600 text-sm sm:text-base mb-6 font-Poppins">
+                    {modalData.description}
                   </p>
+
+                  <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center text-sm text-gray-500 gap-2 sm:gap-0">
+                    <p>{modalData.time}</p>
+                    <p>
+                      {modalData.author} | {modalData.readTime}
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
