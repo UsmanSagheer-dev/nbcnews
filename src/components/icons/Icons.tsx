@@ -1,5 +1,4 @@
 import React from "react";
-
 interface IconProps {
   src: string;
   alt: string;
@@ -7,7 +6,6 @@ interface IconProps {
   height: string;
   onClick?: () => void;
 }
-
 const Icons: React.FC<IconProps> = ({ src, alt, width, height, onClick }) => {
   return (
     <img
@@ -18,5 +16,4 @@ const Icons: React.FC<IconProps> = ({ src, alt, width, height, onClick }) => {
     />
   );
 };
-
 export default Icons;

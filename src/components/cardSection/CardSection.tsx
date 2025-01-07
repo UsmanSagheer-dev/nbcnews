@@ -4,27 +4,26 @@ import { fetchArticles } from "../../redux/slice/articleSlice";
 import { RootState, AppDispatch } from "../../redux/store";
 import Card from "../card/Card";
 import Loader from "../loader/Loader";
-
 const CardSection: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
   const { data, isLoading, isError } = useSelector(
     (state: RootState) => state.article
   );
-
-  const [visibleCount, setVisibleCount] = useState(6); 
-  const [showAll, setShowAll] = useState(false); 
+  const [visibleCount, setVisibleCount] = useState(6);
+  const [showAll, setShowAll] = useState(false);
 
   useEffect(() => {
     dispatch(fetchArticles());
   }, [dispatch]);
 
-  
   console.log("Fetched data: ", data);
 
   if (isLoading) {
-    return <div>
-      <Loader/>
-    </div>;
+    return (
+      <div>
+        <Loader />
+      </div>
+    );
   }
 
   if (isError) {
@@ -37,17 +36,16 @@ const CardSection: React.FC = () => {
 
   const handleToggleView = () => {
     if (showAll) {
-      setVisibleCount(6); 
+      setVisibleCount(6);
     } else {
       setVisibleCount(data.length);
     }
-    setShowAll(!showAll); 
+    setShowAll(!showAll);
   };
 
   return (
     <div className="max-w-[1366px] px-4 sm:px-9 py-4">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[26px]">
-        {/* Render articles */}
         {data?.slice(0, visibleCount).map((article) => (
           <Card
             key={article.id}
@@ -61,7 +59,7 @@ const CardSection: React.FC = () => {
           />
         ))}
       </div>
-     
+
       {data.length > 6 && (
         <div className="text-center mt-6">
           <button
@@ -75,5 +73,4 @@ const CardSection: React.FC = () => {
     </div>
   );
 };
-
 export default CardSection;

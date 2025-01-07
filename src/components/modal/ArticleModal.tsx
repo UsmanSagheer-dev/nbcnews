@@ -20,28 +20,23 @@ const ArticleModal: React.FC<ModalProps> = ({
   const handleCloseModal = () => {
     setShowModal(false);
   };
-
   return (
     <>
       {showModal && (
         <>
-          {/* Fullscreen Overlay */}
           <div
             className="fixed inset-0 bg-black opacity-50 z-40"
             onClick={handleCloseModal}
           ></div>
 
-          {/* Modal Container */}
           <div
             className="fixed inset-0 z-50 flex items-center justify-center"
             onClick={handleCloseModal}
           >
-            {/* Modal Content */}
             <div
               className="relative w-full max-w-[95%] sm:max-w-[85%] lg:max-w-[1000px] bg-white rounded-lg shadow-xl overflow-hidden transform transition-all"
               onClick={(e) => e.stopPropagation()}
             >
- 
               <div className="absolute -right-1 -top-1 z-50">
                 <button
                   className="bg-white w-8 h-8 rounded-full flex items-center justify-center shadow-md hover:bg-gray-100"
@@ -57,7 +52,7 @@ const ArticleModal: React.FC<ModalProps> = ({
                     <img
                       src={modalData.cardimg}
                       alt={modalData.title}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover rounded-[5px]"
                     />
                   </div>
                 </div>
@@ -75,7 +70,6 @@ const ArticleModal: React.FC<ModalProps> = ({
                   <p className="text-gray-600 text-sm sm:text-base mb-6 font-Poppins">
                     {modalData.description}
                   </p>
-
                   <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center text-sm text-gray-500 gap-2 sm:gap-0">
                     <p>{modalData.time}</p>
                     <p>

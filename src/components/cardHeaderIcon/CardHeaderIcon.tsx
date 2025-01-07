@@ -2,31 +2,26 @@ import React, { useState } from "react";
 import { FaRegHeart } from "react-icons/fa";
 import { PiExportBold } from "react-icons/pi";
 import { CiBookmark } from "react-icons/ci";
-
 interface CardHeaderIconProps {
   showCount: boolean;
 }
-
 interface IconData {
   icon: JSX.Element;
   count: number;
   showCount: boolean;
   isActive: boolean;
 }
-
 export const ICONS = {
   Like_icon: <FaRegHeart />,
   Export_icon: <PiExportBold />,
   Favourite_icon: <CiBookmark />,
 };
-
 const CardHeaderIcon: React.FC<CardHeaderIconProps> = ({ showCount }) => {
   const [icons, setIcons] = useState<IconData[]>([
     { icon: ICONS.Like_icon, count: 28, showCount, isActive: false },
     { icon: ICONS.Export_icon, count: 0, showCount, isActive: false },
     { icon: ICONS.Favourite_icon, count: 72, showCount, isActive: false },
   ]);
-
   const handleIconClick = (index: number) => {
     setIcons((prevIcons) =>
       prevIcons.map((icon, i) =>
