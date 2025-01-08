@@ -37,7 +37,7 @@ const ArticleModal: React.FC<ModalProps> = ({
               className="relative w-full max-w-[95%] sm:max-w-[85%] lg:max-w-[1000px] bg-white rounded-lg shadow-xl overflow-hidden transform transition-all"
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="absolute -right-1 -top-1 z-50">
+              <div className="absolute right-1 top-1  z-50">
                 <button
                   className="bg-white w-8 h-8 rounded-full flex items-center justify-center shadow-md hover:bg-gray-100"
                   onClick={handleCloseModal}
@@ -46,7 +46,7 @@ const ArticleModal: React.FC<ModalProps> = ({
                 </button>
               </div>
 
-              <div className="flex flex-col lg:flex-row w-full">
+              <div className="flex flex-col lg:flex-row w-full justify-center items-center">
                 <div className="w-full lg:w-1/2 mt-6 lg:mt-0">
                   <div className="relative h-[200px] sm:h-[300px] lg:h-[400px] p-4 overflow-hidden">
                     <img

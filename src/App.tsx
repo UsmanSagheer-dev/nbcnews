@@ -14,7 +14,7 @@ function App() {
             <Navigation />
            
           </main>
-          <div className="w-full h-full max-w-[1920px] sm:mt-8  bg-[#0E1E32] flex  items-center">
+          <div className="w-full h-full max-w-[1920px]   bg-[#0E1E32] flex  items-center">
         <Footer />
       </div>
         </div>
