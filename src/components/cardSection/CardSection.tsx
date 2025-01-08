@@ -54,7 +54,7 @@ const CardSection: React.FC = () => {
 
   return (
     <div className="max-w-[1366px] px-4 sm:px-9 py-4 flex flex-col items-center justify-center">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[26px] lg:w-[1300px] w-full ">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3  gap-[26px] lg:w-[1300px] w-full ">
         {data?.slice(0, visibleCount).map((article) => (
           <Card
             key={article.id}

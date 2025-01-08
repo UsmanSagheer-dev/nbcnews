@@ -10,9 +10,9 @@ function SearchDetailsPage() {
     (state: RootState) => state.search
   );
   return (
-    <div className="bg-[#f1f2f3]  h-full">
+    <div className="bg-[#f1f2f3]  h-full pb-5">
       <div className="container mx-auto flex items-center justify-center bg-[#f1f2f3]">
-        <div className="flex flex-col items-center justify-center mt-[253px] lg:gap-[64px] gap-5">
+        <div className="flex flex-col items-center justify-center mt-[120px] lg:gap-[10px] gap-2">
           <div>
             <NewsHeader />
           </div>
@@ -21,7 +21,7 @@ function SearchDetailsPage() {
           </div>
         </div>
       </div>
-      <div className="flex items-center justify-center mt-[263px]">
+      <div className="flex items-center justify-center mt-[100px]">
         <div className="container bg-white lg:w-[1290px] w-full h-[54px] flex items-center justify-start px-[15px]">
           <h1 className="text-[18px] font-semibold">Search Results</h1>
         </div>
