@@ -8,7 +8,7 @@ function InfoBar({
   readTime: string;
 }) {
   return (
-    <div className="flex items-center text-gray-500 text-sm space-x-5 mt-3">
+    <div className="flex items-center text-[#2A2A2A] text-[13px] font-normal space-x-5 mt-3 ">
       <span className="whitespace-nowrap overflow-hidden text-ellipsis">{time}</span>
       <div className="flex space-x-2 overflow-hidden">
         <span className="whitespace-wrap overflow-hidden text-ellipsis">{author}</span>
