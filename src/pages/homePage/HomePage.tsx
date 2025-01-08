@@ -4,7 +4,7 @@ import HeroSection from "../../components/heroSection/HeroSection";
 import Tabs from "../../components/tabs/Tabs";
 function Home() {
   return (
-    <div className="h-auto max-w-[1920px] w-full justify-center grid grid-cols-1 items-center">
+    <div className="h-auto max-w-[1920px] w-full justify-center grid grid-cols-1 items-center bg-[#f1f2f3]  ">
       <div className="mt-0 lg:mt-8 flex justify-center items-center max-w-[1920px] w-full">
         <HeroSection />
       </div>

@@ -60,7 +60,6 @@ const Header = () => {
             className="w-[62px] h-[52px]"
           />
         </Link>
-
         <nav className="flex flex-wrap justify-center items-center space-x-4 sm:space-x-8 lg:space-x-14">
           {navLinks.map((link, index) => (
             <Link key={index} to={link.path}>

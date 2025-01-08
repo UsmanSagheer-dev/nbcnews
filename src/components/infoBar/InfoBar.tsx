@@ -9,11 +9,11 @@ function InfoBar({
 }) {
   return (
     <div className="flex items-center text-gray-500 text-sm space-x-5 mt-3">
-      <span>{time}</span>
-      <div className="flex space-x-2">
-        <span>By {author}</span>
-        <span className="text-gray-300">|</span>
-        <span>{readTime}</span>
+      <span className="whitespace-nowrap overflow-hidden text-ellipsis">{time}</span>
+      <div className="flex space-x-2 overflow-hidden">
+        <span className="whitespace-wrap overflow-hidden text-ellipsis">{author}</span>
+        <span className="text-gray-300 ">|</span>
+        <span className="whitespace-nowrap overflow-hidden text-ellipsis">{readTime}</span>
       </div>
     </div>
   );

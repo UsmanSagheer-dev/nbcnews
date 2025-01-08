@@ -1,23 +1,24 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchArticles } from "../../redux/slice/articleSlice";
+import { fetchSports } from "../../redux/slice/sportSlice";
 import { RootState, AppDispatch } from "../../redux/store";
 import Card from "../card/Card";
 import Loader from "../loader/Loader";
 import { IMAGES } from "../../constants/images";
-const CardSection: React.FC = () => {
+
+const SportCardSection: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
   const { data, isLoading, isError } = useSelector(
-    (state: RootState) => state.article
+    (state: RootState) => state.sport
   );
   const [visibleCount, setVisibleCount] = useState(6);
   const [showAll, setShowAll] = useState(false);
 
   useEffect(() => {
-    dispatch(fetchArticles());
+    dispatch(fetchSports());
   }, [dispatch]);
 
-  console.log("Fetched data: ", data);
+  console.log("Fetched sports data: ", data);
 
   if (isLoading) {
     return (
@@ -32,17 +33,8 @@ const CardSection: React.FC = () => {
   }
 
   if (!data || !Array.isArray(data)) {
-    return <p>No articles found.</p>;
+    return <p>No sports articles found.</p>;
   }
-
-  // Function to limit description to 30 words
-  const limitDescription = (text: string, wordLimit: number = 30) => {
-    const words = text.split(" ");
-    return words.length > wordLimit
-      ? words.slice(0, wordLimit).join(" ") + "..."
-      : text;
-  };
-
   const handleToggleView = () => {
     if (showAll) {
       setVisibleCount(6);
@@ -55,18 +47,22 @@ const CardSection: React.FC = () => {
   return (
     <div className="max-w-[1366px] px-4 sm:px-9 py-4 flex flex-col items-center justify-center">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[26px] lg:w-[1300px] w-full ">
-        {data?.slice(0, visibleCount).map((article) => (
+        {data?.slice(0, visibleCount).map((sport) => (
           <Card
-            key={article.id}
+            key={sport.id}
             cardimg={
-              article.media[0]?.["media-metadata"][0]?.url || IMAGES.NEWS_IMAGE
+              sport.media &&
+              sport.media.length > 0 &&
+              sport.media[0]["media-metadata"]
+                ? sport.media[0]["media-metadata"][0]?.url || IMAGES.NEWS_IMAGE
+                : IMAGES.NEWS_IMAGE
             }
-            title={article.title}
-            description={limitDescription(article.abstract)}
-            author={article.byline}
-            time={article.published_date}
-            readTime="5 min read"
-            showLikeCount={true}
+            title={sport?.title}
+            description={sport?.description}
+            author={sport?.league}
+            time={sport?.published_date}
+            readTime="3 min read"
+            showLikeCount={false}
           />
         ))}
       </div>
@@ -75,7 +71,7 @@ const CardSection: React.FC = () => {
         <div className="text-center mt-6">
           <button
             onClick={handleToggleView}
-            className="px-6 py-2 b rounded border-[#C31815] border-[1px] text-[#C31815] "
+            className="px-6 py-2 b rounded border-[#1A73E8] border-[1px] text-[#1A73E8] "
           >
             {showAll ? "Show Less" : "View More"}
           </button>
@@ -85,4 +81,4 @@ const CardSection: React.FC = () => {
   );
 };
 
-export default CardSection;
+export default SportCardSection;

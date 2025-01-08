@@ -1,12 +1,13 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { AxiosResponse } from "axios";
 import Instance from "../../utility/Instance";
-export interface Article {
+
+export interface Sport {
   id: number;
-  byline: string;
   title: string;
-  section: string;
-  abstract: string;
+  league: string;
+  team: string;
+  description: string;
   published_date: string;
   media: {
     "media-metadata": {
@@ -15,24 +16,25 @@ export interface Article {
   }[];
 }
 
-export interface ArticleState {
-  data: Article[] | null;
+export interface SportState {
+  data: Sport[] | null;
   isLoading: boolean;
   isError: string | null;
 }
 
-const initialState: ArticleState = {
+const initialState: SportState = {
   data: null,
   isLoading: false,
   isError: null,
 };
 
-export const fetchArticles = createAsyncThunk(
-  "article/fetchArticles",
+export const fetchSports = createAsyncThunk(
+  "sport/fetchSports",
   async (_, { rejectWithValue }) => {
     try {
-      const response: AxiosResponse<{ results: Article[] }> =
-        await Instance.get("/svc/mostpopular/v2/emailed/30.json");
+      const response: AxiosResponse<{ results: Sport[] }> = await Instance.get(
+        "/svc/topstories/v2/sports.json"
+      );
       return response.data.results;
     } catch (error: any) {
       return rejectWithValue(error?.message || "Something went wrong");
@@ -40,25 +42,25 @@ export const fetchArticles = createAsyncThunk(
   }
 );
 
-export const articleSlice = createSlice({
-  name: "article",
+export const sportsSlice = createSlice({
+  name: "sport",
   initialState,
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(fetchArticles.pending, (state) => {
+      .addCase(fetchSports.pending, (state) => {
         state.isLoading = true;
         state.isError = null;
       })
-      .addCase(fetchArticles.fulfilled, (state, action) => {
+      .addCase(fetchSports.fulfilled, (state, action) => {
         state.isLoading = false;
         state.data = action.payload;
       })
-      .addCase(fetchArticles.rejected, (state, action) => {
+      .addCase(fetchSports.rejected, (state, action) => {
         state.isLoading = false;
         state.isError = action.payload as string;
       });
   },
 });
 
-export default articleSlice.reducer;
+export default sportsSlice.reducer;
