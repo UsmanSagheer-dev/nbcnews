@@ -12,7 +12,6 @@ function App() {
           <Header />
           <main className="flex-grow">
             <Navigation />
-           
           </main>
           <div className="w-full h-full max-w-[1920px]   bg-[#0E1E32] flex  items-center">
         <Footer />
