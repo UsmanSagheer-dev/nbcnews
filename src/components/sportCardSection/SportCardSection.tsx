@@ -1,24 +1,12 @@
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchSports } from "../../redux/slice/sportSlice";
-import { RootState, AppDispatch } from "../../redux/store";
+import React from "react";
 import Card from "../card/Card";
 import Loader from "../loader/Loader";
 import { IMAGES } from "../../constants/images";
+import useSports from "../../hooks/useSports";
 
 const SportCardSection: React.FC = () => {
-  const dispatch = useDispatch<AppDispatch>();
-  const { data, isLoading, isError } = useSelector(
-    (state: RootState) => state.sport
-  );
-  const [visibleCount, setVisibleCount] = useState(6);
-  const [showAll, setShowAll] = useState(false);
-
-  useEffect(() => {
-    dispatch(fetchSports());
-  }, [dispatch]);
-
-  console.log("Fetched sports data: ", data);
+  const { data, isLoading, isError, visibleCount, showAll, handleToggleView } =
+    useSports();
 
   if (isLoading) {
     return (
@@ -35,18 +23,10 @@ const SportCardSection: React.FC = () => {
   if (!data || !Array.isArray(data)) {
     return <p>No sports articles found.</p>;
   }
-  const handleToggleView = () => {
-    if (showAll) {
-      setVisibleCount(6);
-    } else {
-      setVisibleCount(data.length);
-    }
-    setShowAll(!showAll);
-  };
 
   return (
     <div className="max-w-[1366px] px-4 sm:px-9 py-4 flex flex-col items-center justify-center">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[26px] lg:w-[1300px] w-full ">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[26px] lg:w-[1300px] w-full">
         {data?.slice(0, visibleCount).map((sport) => (
           <Card
             key={sport.id}
@@ -71,7 +51,7 @@ const SportCardSection: React.FC = () => {
         <div className="text-center mt-6">
           <button
             onClick={handleToggleView}
-            className="px-6 py-2 b rounded border-[#1A73E8] border-[1px] text-[#1A73E8] "
+            className="px-6 py-2 b rounded border-[#1A73E8] border-[1px] text-[#1A73E8]"
           >
             {showAll ? "Show Less" : "View More"}
           </button>
