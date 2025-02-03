@@ -7,7 +7,7 @@ const CoronavirusCard = () => {
   return (
     <div className="max-w-[540px] max-h-[320px] w-full h-full">
       <div className="flex justify-between items-center">
-        <p className="font-semibold text-[#C31815] text-sm lg:text-base">
+        <p className="font-semibold text-primary text-sm lg:text-base">
           Trending
         </p>
         <div>
@@ -16,7 +16,7 @@ const CoronavirusCard = () => {
       </div>
       <div className="mt-4">
         <h2
-          className="text-[20px] md:text-[24px] lg:text-[30px] font-semibold text-[#2A2A2A] leading-snug"
+          className="text-[20px] md:text-[24px] lg:text-[30px] font-semibold text-secondary leading-snug"
           style={{ fontFamily: "IBMPlexSerif-Regular" }}
         >
           Cake meme reflects coronavirus <br /> absurdity in a world where{" "}

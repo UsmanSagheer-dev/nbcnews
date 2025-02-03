@@ -27,7 +27,7 @@ const SportCardSection: React.FC = () => {
   return (
     <div className="max-w-[1366px] px-4 sm:px-9 py-4 flex flex-col items-center justify-center">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[26px] lg:w-[1300px] w-full">
-        {data?.slice(0, visibleCount).map((sport) => (
+        {data?.slice(0, visibleCount)?.map((sport) => (
           <Card
             key={sport.id}
             cardimg={
@@ -51,7 +51,7 @@ const SportCardSection: React.FC = () => {
         <div className="text-center mt-6">
           <button
             onClick={handleToggleView}
-            className="px-6 py-2 b rounded border-[#1A73E8] border-[1px] text-[#1A73E8]"
+            className="px-6 py-2 b rounded border-borderblue border-[1px] text-borderblue"
           >
             {showAll ? "Show Less" : "View More"}
           </button>

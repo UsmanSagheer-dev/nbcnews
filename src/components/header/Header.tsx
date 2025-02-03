@@ -1,9 +1,9 @@
-// Header.tsx
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import NavbarTabs from "../navbarTabs/NavbarTabs";
 import Icons from "../icons/Icons";
 import { IMAGES } from "../../constants/images";
+import { NAV_LINKS, ICONS } from "../../constants/navigation";
 
 const Header = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -12,38 +12,6 @@ const Header = () => {
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
   };
-
-  const navLinks = [
-    { label: "Corona Updates", path: "/corona" },
-    { label: "Politics", path: "/politics" },
-    { label: "Business", path: "/business" },
-    { label: "Sports", path: "/sports" },
-    { label: "World", path: "/world" },
-    { label: "Travel", path: "/travel" },
-    { label: "Products", path: "/products" },
-  ];
-  const icons = [
-    {
-      src: IMAGES.PROFILE_LOGO,
-      alt: "Profile Icon",
-      width: "w-[19.2px]",
-      height: "h-[24px]",
-      path: "/profile",
-    },
-    {
-      src: IMAGES.SEARCH_ICON,
-      alt: "Search Icon",
-      width: "w-[24px]",
-      height: "h-[24px]",
-      path: "/corona",
-    },
-    {
-      src: IMAGES.MODEL_ICON,
-      alt: "Model Icon",
-      width: "w-[23px]",
-      height: "h-[22px]",
-    },
-  ];
 
   const handleTabClick = (index: number) => {
     setActiveTab(index);
@@ -61,7 +29,7 @@ const Header = () => {
           />
         </Link>
         <nav className="flex flex-wrap justify-center items-center space-x-4 sm:space-x-8 lg:space-x-14">
-          {navLinks.map((link, index) => (
+          {NAV_LINKS?.map((link, index) => (
             <Link key={index} to={link.path}>
               <NavbarTabs
                 label={link.label}
@@ -75,7 +43,7 @@ const Header = () => {
           </div>
         </nav>
         <div className="flex items-center space-x-[20px] cursor-pointer">
-          {icons.map((icon, index) =>
+          {ICONS?.map((icon, index) =>
             icon.path ? (
               <Link key={index} to={icon.path}>
                 <Icons
@@ -109,7 +77,7 @@ const Header = () => {
           />
         </Link>
         <div className="flex items-center space-x-[15px]">
-          {icons.map((icon, index) =>
+          {ICONS?.map((icon, index) =>
             icon.path ? (
               <Link key={index} to={icon.path}>
                 <Icons
@@ -144,7 +112,7 @@ const Header = () => {
             onClick={(e) => e.stopPropagation()}
           >
             <nav className="flex flex-col space-y-4">
-              {navLinks.map((link, index) => (
+              {NAV_LINKS?.map((link, index) => (
                 <Link key={index} to={link.path}>
                   <NavbarTabs
                     label={link.label}
@@ -163,4 +131,5 @@ const Header = () => {
     </header>
   );
 };
+
 export default Header;

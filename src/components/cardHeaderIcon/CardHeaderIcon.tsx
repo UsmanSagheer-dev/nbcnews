@@ -24,7 +24,7 @@ const CardHeaderIcon: React.FC<CardHeaderIconProps> = ({ showCount }) => {
   ]);
   const handleIconClick = (index: number) => {
     setIcons((prevIcons) =>
-      prevIcons.map((icon, i) =>
+      prevIcons?.map((icon, i) =>
         i === index
           ? {
               ...icon,
@@ -38,7 +38,7 @@ const CardHeaderIcon: React.FC<CardHeaderIconProps> = ({ showCount }) => {
 
   return (
     <div className="flex items-center justify-center p-4 gap-6">
-      {icons.map((icon, index) => (
+      {icons?.map((icon, index) => (
         <div
           key={index}
           className="flex items-center cursor-pointer gap-2"

@@ -1,11 +1,10 @@
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useAppDispatch } from "../redux/store";  
 import { fetchSearchResults } from "../redux/slice/searchSlice";
-import { AppDispatch } from "../redux/store";
 
 const useSearchInput = () => {
   const [query, setQuery] = useState("");
-  const dispatch = useDispatch<AppDispatch>();
+  const dispatch = useAppDispatch();  
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter" && query.trim()) {
