@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useAppDispatch } from "../redux/store"; 
+import { useAppSelector } from "../redux/store"; 
 import { fetchArticles } from "../redux/slice/articleSlice";
-import { RootState, AppDispatch } from "../redux/store";
+import { RootState } from "../redux/store";
 
 const useArticles = () => {
-  const dispatch = useDispatch<AppDispatch>();
-  const { data, isLoading, isError } = useSelector(
+  const dispatch = useAppDispatch(); 
+  const { data, isLoading, isError } = useAppSelector(
     (state: RootState) => state.article
   );
   const [visibleCount, setVisibleCount] = useState(6);
@@ -26,7 +27,6 @@ const useArticles = () => {
     setVisibleCount(showAll ? 6 : data?.length ?? 0);
     setShowAll(!showAll);
   };
-  
 
   return {
     data,

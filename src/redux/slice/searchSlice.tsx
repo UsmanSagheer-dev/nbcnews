@@ -32,10 +32,10 @@ export const fetchSearchResults = createAsyncThunk<SearchResponse[], string>(
           q: searchQuery,
         },
       });
-      const docs = responseData.data.response.docs.map((doc) => {
+      const docs = responseData.data.response.docs?.map((doc) => {
         return {
           ...doc,
-          multimedia: doc.multimedia.map((media) => ({
+          multimedia: doc.multimedia?.map((media) => ({
             url: media.url.startsWith("http")
               ? media.url
               : `https://www.nytimes.com/${media.url}`,

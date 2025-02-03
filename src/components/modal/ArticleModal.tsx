@@ -58,7 +58,7 @@ const ArticleModal: React.FC<ModalProps> = ({
                 </div>
 
                 <div className="w-full lg:w-1/2 p-4 sm:p-6">
-                  <div className="flex justify-between items-center text-[#C31815]">
+                  <div className="flex justify-between items-center text-primary">
                     <h1>Trending</h1>
                     <CardHeaderIcon showCount={false} />
                   </div>

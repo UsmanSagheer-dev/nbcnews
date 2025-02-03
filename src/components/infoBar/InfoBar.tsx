@@ -8,12 +8,18 @@ function InfoBar({
   readTime: string;
 }) {
   return (
-    <div className="flex items-center text-[#2A2A2A] text-[13px] font-normal space-x-5 mt-3 ">
-      <span className="whitespace-nowrap overflow-hidden text-ellipsis">{time}</span>
+    <div className="flex items-center text-secondary text-[13px] font-normal space-x-5 mt-3">
+      <span className="whitespace-nowrap overflow-hidden text-ellipsis">
+        {time}
+      </span>
       <div className="flex space-x-2 overflow-hidden">
-        <span className="whitespace-wrap overflow-hidden text-ellipsis">{author}</span>
-        <span className="text-gray-300 ">|</span>
-        <span className="whitespace-nowrap overflow-hidden text-ellipsis">{readTime}</span>
+        <span className="whitespace-wrap overflow-hidden text-ellipsis">
+          {author}
+        </span>
+        <span className="text-gray-300">|</span>
+        <span className="whitespace-nowrap overflow-hidden text-ellipsis">
+          {readTime}
+        </span>
       </div>
     </div>
   );

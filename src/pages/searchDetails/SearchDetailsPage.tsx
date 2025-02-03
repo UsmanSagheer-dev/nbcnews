@@ -35,7 +35,7 @@ function SearchDetailsPage() {
           <p className="text-red-500">{isError}</p>
         ) : searchResults && searchResults.length > 0 ? (
           <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-4">
-            {searchResults.map((result) => {
+            {searchResults?.map((result) => {
               const imageUrl = result.multimedia[0]?.url || IMAGES.NEWS_IMAGE;
               const limitedDescription =
                 result.abstract.split(" ").slice(0, 20).join(" ") +

@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useAppDispatch } from "../redux/store";  // Import custom dispatch hook
+import { useAppSelector } from "../redux/store";  // Import custom selector hook
 import { fetchSports } from "../redux/slice/sportSlice";
-import { RootState, AppDispatch } from "../redux/store";
 
 const useSports = () => {
-  const dispatch = useDispatch<AppDispatch>();
-  const { data, isLoading, isError } = useSelector(
-    (state: RootState) => state.sport
+  const dispatch = useAppDispatch();  // Use custom dispatch hook
+  const { data, isLoading, isError } = useAppSelector(
+    (state) => state.sport  // Use custom selector hook
   );
 
   const [visibleCount, setVisibleCount] = useState(6);
