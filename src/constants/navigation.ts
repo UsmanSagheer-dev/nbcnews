@@ -23,7 +23,7 @@ export const ICONS = [
     alt: "Search Icon",
     width: "w-[24px]",
     height: "h-[24px]",
-    path: "/corona",
+    path: "/search",
   },
   {
     src: IMAGES.MODEL_ICON,
