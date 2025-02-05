@@ -8,7 +8,7 @@ const Navigation: React.FC = () => {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
-      <Route path="/corona" element={<SearchDetailsPage />} />
+      <Route path="/search" element={<SearchDetailsPage />} />
       <Route path="/Sports" element={<SportPage/>} />
       <Route path="*" element={<NotFound />} />
     </Routes>
