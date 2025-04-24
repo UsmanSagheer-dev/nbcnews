@@ -6,6 +6,7 @@ export interface SearchState {
   searchResults: SearchResponse[] | null;
   isLoading: boolean;
   isError: string | null;
+  
 }
 const initialState: SearchState = {
   searchResults: null,
@@ -32,22 +33,29 @@ export const fetchSearchResults = createAsyncThunk<SearchResponse[], string>(
           q: searchQuery,
         },
       });
-      const docs = responseData.data.response.docs?.map((doc) => {
+
+      const docs = responseData.data.response.docs.map((doc) => {
+        let imageUrl = "";
+
+        if (doc.multimedia?.default?.url) {
+          imageUrl = doc.multimedia.default.url;
+        } else if (doc.multimedia?.thumbnail?.url) {
+          imageUrl = doc.multimedia.thumbnail.url;
+        }
+
         return {
           ...doc,
-          multimedia: doc.multimedia?.map((media) => ({
-            url: media.url.startsWith("http")
-              ? media.url
-              : `https://www.nytimes.com/${media.url}`,
-          })),
+          multimedia: [{ url: imageUrl }],
         };
       });
+
       return docs;
     } catch (error: any) {
       throw new Error(error?.message || "Something went wrong");
     }
   }
 );
+
 export const searchSlice = createSlice({
   name: "search",
   initialState,
